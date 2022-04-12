@@ -1,3 +1,11 @@
+variable "tags" {
+  type        = map(any)
+  description = "Resource tags"
+  default = {
+    environment = "test"
+    managed_by  = "terratest"
+  }
+}
 variable "location" {
   type        = string
   description = "The Location where RG is created"
@@ -7,16 +15,6 @@ variable "resource_group_name" {
   type        = string
   description = "The name of the Resource group"
 }
-
-variable "tags" {
-  type        = map(any)
-  description = "Resource tags"
-  default = {
-    environment = "test"
-    managed_by  = "terratest"
-  }
-}
-
 variable "vpn_gateway_pip_name" {
   description = "The name of the Virtual Network Gateway public IP"
   type        = string
