@@ -62,14 +62,14 @@ variable "vpn_gw_sku" {
   default     = "VpnGw1"
 }
 
-variable "vpn_gw_generation" {
-  description = "The Generation of the Virtual Network gateway. Possible values include Generation1, Generation2 or None"
-  type        = string
-  default     = "Generation1"
-}
-
 variable "enable_active_active" {
   description = "If true, an active-active Virtual Network Gateway will be created. An active-active gateway requires a HighPerformance or an UltraPerformance sku. If false, an active-standby gateway will be created. Defaults to false."
   type        = bool
   default     = false
+}
+
+variable "vpn_gw_generation" {
+  description = "The Generation of the Virtual Network gateway. Possible values include Generation1, Generation2 or None"
+  type        = string
+  default     = "Generation1"
 }
