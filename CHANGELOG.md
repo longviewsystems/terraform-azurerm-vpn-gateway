@@ -1,3 +1,5 @@
+## [1.0.1](https://github.com/longviewsystems/terraform-azurerm-vpn-gateway/compare/1.0.0...1.0.1) (2022-05-25)
+
 # 1.0.0 (2022-04-12)
 
 # [1.2.0](https://github.com/longviewsystems/terraform-azurerm-common-template/compare/1.1.2...1.2.0) (2022-01-14)
