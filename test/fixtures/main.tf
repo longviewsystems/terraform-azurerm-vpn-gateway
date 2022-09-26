@@ -18,8 +18,8 @@ module "vpn_gateway" {
   location                        = module.resources.virtual_network_resource_group_location
   resource_group_name             = module.resources.virtual_network_resource_group_name
   vpn_gateway_pip_name            = module.naming.public_ip.name_unique
-  vpn_public_ip_sku               = "Basic"
-  vpn_public_ip_allocation_method = "Dynamic"
+  vpn_public_ip_sku               = "Standard"
+  vpn_public_ip_allocation_method = "Static"
   vpn_gateway_name                = module.naming.virtual_network_gateway.name_unique
   gateway_type                    = "Vpn"
   vpn_type                        = "RouteBased"
