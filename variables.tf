@@ -35,13 +35,13 @@ variable "vpn_gateway_name" {
 variable "vpn_public_ip_allocation_method" {
   description = "Defines the allocation method for this IP address. Possible values are Static or Dynamic. Defaults to Dynamic"
   type        = string
-  default     = "Dynamic"
+  default     = "Static"
 }
 
 variable "vpn_public_ip_sku" {
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic"
   type        = string
-  default     = "Basic"
+  default     = "Standard"
 }
 
 variable "gateway_type" {
