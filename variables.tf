@@ -77,5 +77,5 @@ variable "vpn_gw_generation" {
 variable "zones" {
   description = "A collection containing the availability zone to allocate the Public IP in"
   type        = list(any)
-  default     = ["1", "2", "3"]
+  default     = ["58"]
 }
