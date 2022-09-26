@@ -73,3 +73,9 @@ variable "vpn_gw_generation" {
   type        = string
   default     = "Generation1"
 }
+
+variable "zones" {
+  description = "A collection containing the availability zone to allocate the Public IP in"
+  type        = list(any)
+  default     = ["1", "2", "3"]
+}
