@@ -42,7 +42,7 @@ jobs:
         path: ~/.tflint.d/plugins
         key: ${{ matrix.os }}-tflint-${{ hashFiles('.tflint.hcl') }}
 
-    - uses: terraform-linters/setup-tflint@v1
+    - uses: terraform-linters/setup-tflint@v2
       name: Setup TFLint
       with:
         tflint_version: v0.34.1
@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # checkout the repo to the Github Actions runner
-      - uses: actions/setup-go@v2 # setup the go environment
+      - uses: actions/setup-go@v3 # setup the go environment
         with:
           go-version: 1.17
       - uses: hashicorp/setup-terraform@v1 # setup the terraform environment
@@ -110,7 +110,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v1 #Install Node 15 apt repo
+      - uses: actions/setup-node@v2 #Install Node 15 apt repo
         with:
           node-version: 18
       - name: Install node modules
