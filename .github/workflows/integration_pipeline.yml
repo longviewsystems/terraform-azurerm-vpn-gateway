@@ -112,7 +112,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v1 #Install Node 15 apt repo
         with:
-          node-version: 14.x
+          node-version: 18
       - name: Install node modules
         run: |
           npm install npx semantic-release
