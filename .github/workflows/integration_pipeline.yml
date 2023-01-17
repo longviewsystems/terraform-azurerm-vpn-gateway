@@ -13,13 +13,13 @@ on:
     defaults:
       run:
         shell: bash # use bash shell regardless of the type of Github Actions runner
-
+permissions: read-all
 jobs:
   checkov-tests:
     name: 'Run Checkov | Static Code Analysis'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: bridgecrewio/checkov-action@master
         with:
           directory: .
@@ -33,10 +33,10 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       name: Checkout source code
       
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       name: Cache plugin dir
       with:
         path: ~/.tflint.d/plugins
@@ -62,8 +62,8 @@ jobs:
     name: 'Run Terratest | Unit Testing'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # checkout the repo to the Github Actions runner
-      - uses: actions/setup-go@v1 # setup the go environment
+      - uses: actions/checkout@v3 # checkout the repo to the Github Actions runner
+      - uses: actions/setup-go@v2 # setup the go environment
         with:
           go-version: 1.17
       - uses: hashicorp/setup-terraform@v1 # setup the terraform environment
@@ -86,7 +86,7 @@ jobs:
     name: 'Convert markdown to PDF using Pandoc'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: 'Create file list'
         id: files_list
@@ -107,7 +107,7 @@ jobs:
     name: 'Automated Tagging and Versioning using semantic-release'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
       - uses: actions/setup-node@v1 #Install Node 15 apt repo

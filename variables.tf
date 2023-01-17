@@ -41,7 +41,7 @@ variable "vpn_public_ip_allocation_method" {
 variable "vpn_public_ip_sku" {
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic"
   type        = string
-  default     = "Basic"
+  default     = "Standard"
 }
 
 variable "gateway_type" {
