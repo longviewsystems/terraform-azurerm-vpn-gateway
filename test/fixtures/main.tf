@@ -23,7 +23,7 @@ module "vpn_gateway" {
   vpn_gateway_name                = module.naming.virtual_network_gateway.name_unique
   gateway_type                    = "Vpn"
   vpn_type                        = "RouteBased"
-  vpn_gw_sku                      = "VpnGw2"
+  vpn_gw_sku                      = "VpnGw2AZ"
   vpn_gw_generation               = "Generation2"
   enable_active_active            = "false"
   gateway_subnet_id               = module.resources.gateway_subnet_id
