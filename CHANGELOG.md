@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/longviewsystems/terraform-azurerm-vpn-gateway/compare/1.0.1...1.1.0) (2023-01-18)
+
+
+### Features
+
+* **azboard-72260:** Upgrade azurerm provider version ([9b16fdd](https://github.com/longviewsystems/terraform-azurerm-vpn-gateway/commit/9b16fdd02f28376c9bb69422b868e284aa394692))
+
 ## [1.0.1](https://github.com/longviewsystems/terraform-azurerm-vpn-gateway/compare/1.0.0...1.0.1) (2022-05-25)
 
 # 1.0.0 (2022-04-12)
