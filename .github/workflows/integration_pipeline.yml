@@ -13,13 +13,13 @@ on:
     defaults:
       run:
         shell: bash # use bash shell regardless of the type of Github Actions runner
-
+permissions: read-all
 jobs:
   checkov-tests:
     name: 'Run Checkov | Static Code Analysis'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: bridgecrewio/checkov-action@master
         with:
           directory: .
@@ -33,16 +33,16 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       name: Checkout source code
       
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       name: Cache plugin dir
       with:
         path: ~/.tflint.d/plugins
         key: ${{ matrix.os }}-tflint-${{ hashFiles('.tflint.hcl') }}
 
-    - uses: terraform-linters/setup-tflint@v1
+    - uses: terraform-linters/setup-tflint@v2
       name: Setup TFLint
       with:
         tflint_version: v0.34.1
@@ -62,11 +62,11 @@ jobs:
     name: 'Run Terratest | Unit Testing'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # checkout the repo to the Github Actions runner
-      - uses: actions/setup-go@v1 # setup the go environment
+      - uses: actions/checkout@v3 # checkout the repo to the Github Actions runner
+      - uses: actions/setup-go@v3 # setup the go environment
         with:
           go-version: 1.17
-      - uses: hashicorp/setup-terraform@v1 # setup the terraform environment
+      - uses: hashicorp/setup-terraform@v2 # setup the terraform environment
         with:
           terraform_version: 1.0.11
           terraform_wrapper: false
@@ -86,7 +86,7 @@ jobs:
     name: 'Convert markdown to PDF using Pandoc'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: 'Create file list'
         id: files_list
@@ -107,12 +107,12 @@ jobs:
     name: 'Automated Tagging and Versioning using semantic-release'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v1 #Install Node 15 apt repo
+      - uses: actions/setup-node@v3 #Install Node 15 apt repo
         with:
-          node-version: 14.x
+          node-version: 18
       - name: Install node modules
         run: |
           npm install npx semantic-release

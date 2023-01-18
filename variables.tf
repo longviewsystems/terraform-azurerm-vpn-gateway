@@ -35,13 +35,13 @@ variable "vpn_gateway_name" {
 variable "vpn_public_ip_allocation_method" {
   description = "Defines the allocation method for this IP address. Possible values are Static or Dynamic. Defaults to Dynamic"
   type        = string
-  default     = "Dynamic"
+  default     = "Static"
 }
 
 variable "vpn_public_ip_sku" {
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic"
   type        = string
-  default     = "Basic"
+  default     = "Standard"
 }
 
 variable "gateway_type" {
@@ -72,4 +72,10 @@ variable "vpn_gw_generation" {
   description = "The Generation of the Virtual Network gateway. Possible values include Generation1, Generation2 or None"
   type        = string
   default     = "Generation1"
+}
+
+variable "vpn_public_ip_zones" {
+  description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
+  type        = list(string)
+  default     = [1,2,3]
 }
