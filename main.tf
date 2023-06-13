@@ -25,13 +25,4 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = var.gateway_subnet_id
   }
-
-    vpn_client_configuration {
-    vpn_aad_audience                = var.vpn_aad_audience
-    vpn_aad_issuer                  = var.vpn_aad_issuer
-    vpn_aad_tenant                  = var.vpn_aad_tenant
-    address_space                   = var.address_space
-    vpn_auth_types                  = var.vpn_auth_types
-    vpn_client_protocols            = var.vpn_client_protocols
-  }
 }
