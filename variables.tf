@@ -74,13 +74,13 @@ variable "vpn_gw_generation" {
   default     = "Generation1"
 }
 
-# variable "vpn_public_ip_zones" {
-#   description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
-#   type        = list(string)
-#   default     = [1,2,3]
-# }
+variable "vpn_public_ip_zones" {
+  description = "the Zones of the Public IP. Accepted values are 1,2. Defaults to 1,2"
+  type        = list(string)
+  default     = [1,2]
+}
 
-variable "availability_zone" {
-  type        = string
-  description = "Availability zone of the Firewall"
-} 
+# variable "availability_zone" {
+#   type        = string
+#   description = "Availability zone of the Firewall"
+# } 
