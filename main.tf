@@ -5,7 +5,6 @@ resource "azurerm_public_ip" "pip_gw" {
   allocation_method   = var.vpn_public_ip_allocation_method
   sku                 = var.vpn_public_ip_sku
   # zones             = var.vpn_public_ip_zones
-  availability_zone   = "No-Zone"
 }
 
 
@@ -18,6 +17,7 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
   sku                 = var.vpn_gw_sku
   active_active       = var.enable_active_active
   generation          = var.vpn_gw_generation
+  availability_zone  = "No-Zone"
   tags                = var.tags
 
   ip_configuration {
