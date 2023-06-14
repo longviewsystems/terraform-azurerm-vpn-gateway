@@ -80,7 +80,38 @@ variable "vpn_public_ip_zones" {
   default     = ["1"]
 }
 
-# variable "availability_zone" {
-#   type        = string
-#   description = "Availability zone of the Firewall"
-# } 
+variable "aad_audience" {
+  description = " The client id of the Azure VPN application"
+  type        = string
+  default     = null
+}
+
+variable "aad_issuer" {
+  description = "The STS url for your tenant"
+  type        = string
+  default     = null
+}
+
+variable "aad_tenant" {
+  description = "AzureAD Tenant URL"
+  type        = string
+  default     = null
+}
+
+variable "address_space" {
+  description = "The address space out of which IP addresses for vpn clients will be taken"
+  type        = list(string)
+  default     = []
+}
+
+variable "vpn_auth_types" {
+  description = "Vpn authentication types for the virtual network gateway."
+  type        = list(string)
+  default     = []
+}
+
+variable "vpn_client_protocols" {
+  description = "List of the protocols supported by the vpn client"
+  type        = list(string)
+  default     = []
+}

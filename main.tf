@@ -5,7 +5,6 @@ resource "azurerm_public_ip" "pip_gw" {
   allocation_method   = var.vpn_public_ip_allocation_method
   sku                 = var.vpn_public_ip_sku
   zones               = var.vpn_public_ip_zones
-  # availability_zone   = "No-Zone"
 }
 
 
@@ -26,4 +25,15 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = var.gateway_subnet_id
   }
+
+  vpn_client_configuration {
+   aad_audience                    = var.aad_audience
+   aad_issuer                      = var.aad_issuer
+   aad_tenant                      = var.aad_tenant
+   address_space                   = var.address_space
+   vpn_auth_types                  = var.vpn_auth_types
+   vpn_client_protocols            = var.vpn_client_protocols
+  }
 }
+
+
