@@ -119,5 +119,4 @@ variable "vpn_client_protocols" {
 variable "availability_zone" {
   description = "The availability zone of the virtual network gateway."
   type        = string
-  default     = "No-Zone"
 }
