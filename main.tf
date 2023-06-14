@@ -13,11 +13,11 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
   resource_group_name = var.resource_group_name
   location            = var.location
   type                = var.gateway_type
+  availability_zone  = "No-Zone"
   vpn_type            = var.vpn_type
   sku                 = var.vpn_gw_sku
   active_active       = var.enable_active_active
   generation          = var.vpn_gw_generation
-  availability_zone  = "No-Zone"
   tags                = var.tags
 
   ip_configuration {
