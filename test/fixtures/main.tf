@@ -27,5 +27,5 @@ module "vpn_gateway" {
   vpn_gw_generation               = "Generation2"
   enable_active_active            = "false"
   gateway_subnet_id               = module.resources.gateway_subnet_id
-  availability_zone               = "No-Zone" 
+  
 }
