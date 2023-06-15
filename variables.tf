@@ -74,11 +74,11 @@ variable "vpn_gw_generation" {
   default     = "Generation1"
 }
 
-# variable "vpn_public_ip_zones" {
-#   description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
-#   type        = list(string)
-#   default     = ["1", "2", "3"]
-# }
+variable "vpn_public_ip_zones" {
+  description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
+  type        = list(string)
+  default     = [1, 2, 3]
+}
 
 variable "aad_audience" {
   description = " The client id of the Azure VPN application"
@@ -114,9 +114,4 @@ variable "vpn_client_protocols" {
   description = "List of the protocols supported by the vpn client"
   type        = list(string)
   default     = []
-}
-
-variable "availability_zone" {
-  description = "The availability zone of the virtual network gateway."
-  type        = string
 }
