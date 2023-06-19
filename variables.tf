@@ -15,6 +15,7 @@ variable "resource_group_name" {
   type        = string
   description = "The name of the Resource group"
 }
+
 variable "vpn_gateway_pip_name" {
   description = "The name of the Virtual Network Gateway public IP"
   type        = string
@@ -74,10 +75,10 @@ variable "vpn_gw_generation" {
   default     = "Generation1"
 }
 
-variable "vpn_public_ip_zones" {
+variable "availability_zone" {
   description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
   type        = list(string)
-  default     = [1]
+  # default     = [1,2,3]
 }
 
 variable "aad_audience" {
