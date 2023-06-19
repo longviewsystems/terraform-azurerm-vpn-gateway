@@ -78,7 +78,7 @@ variable "vpn_gw_generation" {
 variable "availability_zone" {
   description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
   type        = string
-  default     = "1"
+  default     = "Zone-Redundant"
 }
 
 variable "aad_audience" {
