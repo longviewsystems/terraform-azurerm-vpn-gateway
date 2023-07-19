@@ -111,8 +111,4 @@ variable "vpn_client_protocols" {
   default     = []
 }
 
-variable "zones" {
-  description = "the Zones of the Public IP"
-  type        = string
-  default     = "Zone-Redundant"
-}
+
