@@ -4,7 +4,7 @@ resource "azurerm_public_ip" "pip_gw" {
   resource_group_name = var.resource_group_name
   allocation_method   = var.vpn_public_ip_allocation_method
   sku                 = var.vpn_public_ip_sku
-  zones               = ""
+  
 }
 
 
