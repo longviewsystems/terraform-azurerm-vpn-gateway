@@ -15,6 +15,7 @@ variable "resource_group_name" {
   type        = string
   description = "The name of the Resource group"
 }
+
 variable "vpn_gateway_pip_name" {
   description = "The name of the Virtual Network Gateway public IP"
   type        = string
@@ -41,7 +42,7 @@ variable "vpn_public_ip_allocation_method" {
 variable "vpn_public_ip_sku" {
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic"
   type        = string
-  default     = "Standard"
+  default     = "Basic"
 }
 
 variable "gateway_type" {
@@ -74,8 +75,44 @@ variable "vpn_gw_generation" {
   default     = "Generation1"
 }
 
-variable "vpn_public_ip_zones" {
-  description = "the Zones of the Public IP. Accepted values are 1,2,3. Defaults to 1,2,3"
+variable "aad_audience" {
+  description = " The client id of the Azure VPN application"
+  type        = string
+  default     = null
+}
+
+variable "aad_issuer" {
+  description = "The STS url for your tenant"
+  type        = string
+  default     = null
+}
+
+variable "aad_tenant" {
+  description = "AzureAD Tenant URL"
+  type        = string
+  default     = null
+}
+
+variable "address_space" {
+  description = "The address space out of which IP addresses for vpn clients will be taken"
   type        = list(string)
-  default     = [1,2,3]
+  default     = []
+}
+
+variable "vpn_auth_types" {
+  description = "Vpn authentication types for the virtual network gateway."
+  type        = list(string)
+  default     = []
+}
+
+variable "vpn_client_protocols" {
+  description = "List of the protocols supported by the vpn client"
+  type        = list(string)
+  default     = []
+}
+
+variable "availability_zone" {
+  description = "the Zones of the Public IP"
+  type        = string
+  default     = "Zone-Redundant"
 }
