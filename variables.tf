@@ -42,7 +42,7 @@ variable "vpn_public_ip_allocation_method" {
 variable "vpn_public_ip_sku" {
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic"
   type        = string
-  default     = "Standard"
+  default     = "Basic"
 }
 
 variable "gateway_type" {
@@ -111,4 +111,8 @@ variable "vpn_client_protocols" {
   default     = []
 }
 
-
+variable "availability_zone" {
+  description = "the Zones of the Public IP"
+  type        = string
+  default     = "Zone-Redundant"
+}
